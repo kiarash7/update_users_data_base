@@ -27,7 +27,11 @@
     $users = $result -> fetch_all(MYSQLI_ASSOC);
     $i = 1;
     foreach ($users as $user){
-        echo "><a class='btn btn-primary' target='_blank' href='update.php?id=$user[id]&first_name=$user[first_name]&last_name=$user[last_name]&email=$user[email]&passwords=$user[passwords]&age=$user[age]' title='Click Here For Edit'>
+        echo "
+                <li class='list-group-item'>$i</li>
+                <ul class='list-group'>
+                <li class='list-group-item'>
+                <a class='btn btn-primary' target='_blank' href='update.php?id=$user[id]&first_name=$user[first_name]&last_name=$user[last_name]&email=$user[email]&passwords=$user[passwords]&age=$user[age]' title='Click Here For Edit'>
                 $user[first_name] $user[last_name]
                 </a>
                 <a href='remove.php?id=$user[id]'>
@@ -41,7 +45,7 @@
     ?>
 </div>
 <div class="container">
-    <h3><a href="add_user.php"><i class="fas fa-user-plus"></i></a></h3>
+    <h3><a href="add_user.php"><i class="fas fa-user-plus pl-3"></i>ADD USERS</a></h3>
 </div>
 <!--script-->
 <script src="https://kit.fontawesome.com/15068d35f7.js" crossorigin="anonymous"></script>
